@@ -1,0 +1,86 @@
+#include <stdio.h>
+
+int main() {
+    int marks[4] = {70, 85, 90, 60};
+    printf("%d", marks[2]);
+    return 0;
+}
+
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Node {
+    int data;
+    struct Node* next;
+};
+
+int main() {
+    struct Node* head = (struct Node*)malloc(sizeof(struct Node));
+    struct Node* second = (struct Node*)malloc(sizeof(struct Node));
+    struct Node* third = (struct Node*)malloc(sizeof(struct Node));
+
+    head->data = 10;
+    head->next = second;
+
+    second->data = 20;
+    second->next = third;
+
+    third->data = 30;
+    third->next = NULL;
+
+    return 0;
+}
+
+#include <stdio.h>
+#define SIZE 5
+
+int stack[SIZE];
+int top = -1;
+
+void push(int value) {
+    stack[++top] = value;
+}
+
+int pop() {
+    return stack[top--];
+}
+
+#include <stdio.h>
+#define SIZE 5
+
+int queue[SIZE];
+int front = 0, rear = -1;
+
+void enqueue(int value) {
+    queue[++rear] = value;
+}
+
+int dequeue() {
+    return queue[front++];
+}
+
+#include <stdio.h>
+#include <stdlib.h>
+
+struct TreeNode {
+    int data;
+    struct TreeNode* left;
+    struct TreeNode* right;
+};
+
+struct TreeNode* newNode(int value) {
+    struct TreeNode* node = (struct TreeNode*)malloc(sizeof(struct TreeNode));
+    node->data = value;
+    node->left = NULL;
+    node->right = NULL;
+    return node;
+}
+
+#include <stdio.h>
+#define V 3
+
+int graph[V][V] = {
+    {0, 1, 1},
+    {1, 0, 0},
+    {1, 0, 0}
+};
